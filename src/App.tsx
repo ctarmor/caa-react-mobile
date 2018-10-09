@@ -18,6 +18,13 @@ class App extends React.Component {
   //
   // React bootstrap 
   // https://react-bootstrap.github.io/layout/grid/
+  //
+  // reactstrp types
+  // https://reactstrap.github.io/components/alerts/
+  //
+  // Typescript starter
+  // https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter
+  
   
 
 
