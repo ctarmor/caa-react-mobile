@@ -24,7 +24,13 @@ class App extends React.Component {
   //
   // Typescript starter
   // https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter
-  
+  //
+  // https://useiconic.com/open/
+  //
+  // https://octicons.github.com/
+  //
+  // How to use
+  // https://github.com/primer/octicons/tree/master/lib/octicons_react 
   
 
 

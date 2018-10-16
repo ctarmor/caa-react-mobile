@@ -58,7 +58,7 @@ class NavigationBar extends React.Component<INavigationBarProps, INavigationBarS
 
     public render() {
         return (
-            <Navbar color="light" light={true} expand="md">
+            <Navbar color="blue" light={true} expand="md">
                 <NavbarBrand href="/">reactstrap</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar={true}>

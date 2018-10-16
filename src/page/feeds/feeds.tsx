@@ -1,9 +1,8 @@
+import Octicon, { Beaker, Zap } from '@githubprimer/octicons-react'
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Link } from 'react-router-dom';
-import { Col, Container, Row } from 'reactstrap';
-import NavigationBar from '../../components/NavigationBar';
-
+import { Container, Row } from 'reactstrap';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
 
 
 class Feeds extends React.Component<RouteComponentProps<any>> {
@@ -25,22 +24,11 @@ class Feeds extends React.Component<RouteComponentProps<any>> {
 
     public render() {
         return (
-            <Container fluid={true}>
-                <Row>
-                    <Col>
-                        Test Page
-                    </Col>
-                    <Col>
-                        <h2>id: {this.props.match.params.userid}</h2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Link to="/home">Home</Link>
-                    </Col>
-                </Row>
-                <Row>
-                    <NavigationBar/>
+            <Container color="blue" fluid={true}>
+                <Octicon icon={Zap} />
+                <Octicon icon={Beaker} />
+                <Row xm="2" color="Green">
+                    <NavigationBar />
                 </Row>
             </Container>
         );
