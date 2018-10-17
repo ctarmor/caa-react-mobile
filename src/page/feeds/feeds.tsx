@@ -1,4 +1,3 @@
-import Octicon, { Beaker, Zap } from '@githubprimer/octicons-react'
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { Container, Row } from 'reactstrap';
@@ -25,8 +24,6 @@ class Feeds extends React.Component<RouteComponentProps<any>> {
     public render() {
         return (
             <Container color="blue" fluid={true}>
-                <Octicon icon={Zap} />
-                <Octicon icon={Beaker} />
                 <Row xm="2" color="Green">
                     <NavigationBar />
                 </Row>
