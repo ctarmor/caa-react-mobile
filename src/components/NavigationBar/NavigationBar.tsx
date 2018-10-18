@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Navbar } from 'reactstrap';
-
-import { NavigationButtons } from '../NavButtons/ButtonDictionary';
+// ßimport { GridLayout } from 'react-grid-layout';
+import { Responsive, WidthProvider } from 'react-grid-layout';
+// import { Col, Container, Row } from 'reactstrap';
+import { INavigationDefinition, NavigationButtons } from '../NavButtons/ButtonDictionary';
 import NavButton from '../NavButtons/NavButton';
 
 export interface INavigationBarProps {
@@ -12,9 +13,9 @@ export interface INavigationBarState {
     isOpen?: boolean;
 }
 
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
-
-
+// https://github.com/STRML/react-grid-layout#providing-grid-width
 // https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
 
 class NavigationBar extends React.Component<INavigationBarProps, INavigationBarState> {
@@ -47,19 +48,19 @@ class NavigationBar extends React.Component<INavigationBarProps, INavigationBarS
 
     // https://reactstrap.github.io/components/navbar/
 
+    // Container: https://reactstrap.github.io/components/layout/
+    public mapFunction = (b: INavigationDefinition, i: number) =>
+        <NavButton def={b} key={i} />
 
     public render() {
         return (
-            <Navbar color="blue" light={true} expand="md">
-                {
-                    NavigationButtons.navbuttons.map((b, i) => {
-                        return (
-                            // tslint:disable-next-line:jsx-key
-                            <NavButton def={b} />
-                        );
-                    })
-                }
-            </Navbar>
+            <div>
+                <ResponsiveGridLayout width={200}>
+                    {
+                        NavigationButtons.navbuttons.map(this.mapFunction)
+                    }
+                </ResponsiveGridLayout>
+            </div>
         );
     }
 }

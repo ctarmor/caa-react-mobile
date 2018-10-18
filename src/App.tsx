@@ -31,7 +31,9 @@ class App extends React.Component {
   //
   // How to use
   // https://github.com/primer/octicons/tree/master/lib/octicons_react 
-  
+  //
+  // Reactive grid
+  // https://github.com/STRML/react-grid-layout#providing-grid-width
 
 
   public render() {

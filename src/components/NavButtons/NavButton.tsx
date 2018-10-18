@@ -18,7 +18,7 @@ class NavButton extends React.Component<INavButtonProps, {}> {
 
         return (
             <Button color={p.color} href={p.href} >
-                <Octicon icon={p.icon} />
+                <Octicon icon={p.icon} size={"small"} />
             </Button>
         );
     }
