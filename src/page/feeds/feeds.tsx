@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import { Container, Row } from 'reactstrap';
+import IncreaseButtonControl from 'src/controls/IncreaseButtonsMap';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 
 
@@ -23,11 +23,10 @@ class Feeds extends React.Component<RouteComponentProps<any>> {
 
     public render() {
         return (
-            <Container color="blue" fluid={true}>
-                <Row xm="2" color="Green">
-                    <NavigationBar />
-                </Row>
-            </Container>
+            <div>
+                <IncreaseButtonControl/>
+                <NavigationBar/>
+            </div>
         );
     }
 }

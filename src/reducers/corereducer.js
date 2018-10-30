@@ -7,6 +7,7 @@ import { combineReducers } from 'redux-immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
 import globalReducer from '../reducers/appreducer';
+import { navButtonReducer } from '../components/NavButtons/NavButtonReducer';
 import languageProviderReducer from '../language/reducer';
 
 /*
@@ -44,6 +45,7 @@ export default function createReducer(injectedReducers) {
   return combineReducers({
     global: globalReducer,
     language: languageProviderReducer,
+    navButtonReducer: navButtonReducer,
     route: routeReducer,
     ...injectedReducers,
   });

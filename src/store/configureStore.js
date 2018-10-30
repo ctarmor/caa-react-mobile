@@ -1,6 +1,14 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { fromJS } from 'immutable';
-import { routerMiddleware } from 'react-router-redux';
+import {
+    createStore,
+    applyMiddleware,
+    compose
+} from 'redux';
+import {
+    fromJS
+} from 'immutable';
+import {
+    routerMiddleware
+} from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from '../reducers/corereducer';
 
@@ -28,10 +36,19 @@ export default function configureStore(initialState = {}, history) {
         compose;
     /* eslint-enable */
 
+
+    const logger = stre => next => action => {
+        //console.log('dispatching', action)
+        let result = next(action)
+        // console.log('next state', stre.getState())
+        return result
+    }
+
     const store = createStore(
         createReducer(),
         fromJS(initialState),
         composeEnhancers(...enhancers),
+        applyMiddleware(logger)
     );
 
 
