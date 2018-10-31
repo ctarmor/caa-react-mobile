@@ -2,7 +2,7 @@ import Octicon from '@githubprimer/octicons-react'
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
-import { NavButtonReducer, NavButtonSize } from 'src/actions/NavButtonAction';
+import * as actions from '../../actions/NavButtonAction';
 import { INavigationDefinition } from './ButtonDictionary';
 
 export interface INavButtonProps {
@@ -28,12 +28,8 @@ class NavButton extends React.Component<INavButtonProps> {
 }
 
 export function mapStateToProps(state: any) {
-    const sz = state
-        .get(NavButtonReducer)
-        .get(NavButtonSize);
-
     return {
-        size: sz
+        size: actions.getButtonSize(state)
     }
 }
 

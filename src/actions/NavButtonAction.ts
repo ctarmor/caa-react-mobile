@@ -25,3 +25,8 @@ export type AllActions = INavButtonDecrementSize | INavButtonIncrementSize;
 export const NavButtonReducer = 'navButtonReducer';
 export const NavButtonSize = 'size';
 
+export function getButtonSize(state: any) {
+    return state
+        .get(NavButtonReducer)
+        .get(NavButtonSize);
+}

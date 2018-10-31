@@ -5,7 +5,7 @@ import { IncreaseButtonControl } from './IncreaseButtonControl';
 
 export function mapStateToProps(state: any) {
     return {
-        // Empty to make connect() work
+        iconSz: actions.getButtonSize(state)
     }
 } 
 
