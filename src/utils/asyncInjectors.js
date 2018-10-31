@@ -8,12 +8,12 @@ import createReducer from '../reducers';
  */
 export function checkStore(store) {
   const shape = {
+    asyncReducers: isObject,
     dispatch: isFunction,
-    subscribe: isFunction,
     getState: isFunction,
     replaceReducer: isFunction,
     runSaga: isFunction,
-    asyncReducers: isObject,
+    subscribe: isFunction,
   };
   invariant(
     conformsTo(store, shape),
@@ -26,7 +26,7 @@ export function checkStore(store) {
  */
 export function injectAsyncReducer(store, isValid) {
   return function injectReducer(name, asyncReducer) {
-    if (!isValid) checkStore(store);
+    if (!isValid) { checkStore(store); }
 
     invariant(
       isString(name) && !isEmpty(name) && isFunction(asyncReducer),
@@ -43,7 +43,7 @@ export function injectAsyncReducer(store, isValid) {
  */
 export function injectAsyncSagas(store, isValid) {
   return function injectSagas(name, sagas) {
-    if (!isValid) checkStore(store);
+    if (!isValid) { checkStore(store); }
 
     if (store.asyncSagas[name]) {
       return;
